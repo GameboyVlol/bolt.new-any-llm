@@ -13,3 +13,7 @@ declare module 'istextorbinary' {
 
   export function getEncoding(buffer: Buffer | null, opts?: EncodingOpts): 'utf8' | 'binary' | null;
 }
+
+declare module 'react-dom/server.browser' {
+  export * from 'react-dom/server';
+}
