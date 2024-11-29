@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "deploy": "npm run build && wrangler pages deploy",
-    "build": "remix vite:build && ollama run qwen2.5-coder && touch modelfile && printf 'FROM qwen2.5-coder:7b\nPARAMETER num_ctx 32768' > modelfile && ollama create -f Modelfile qwen2.5:ottodev",
+    "build": "remix vite:build && curl -fsSL https://ollama.com/install.sh | sh && ollama run qwen2.5-coder && touch modelfile && printf 'FROM qwen2.5-coder:7b\nPARAMETER num_ctx 32768' > modelfile && ollama create -f Modelfile qwen2.5:ottodev",
     "dev": "remix vite:dev",
     "test": "vitest --run",
     "test:watch": "vitest",
